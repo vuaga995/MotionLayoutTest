@@ -44,26 +44,12 @@ public class LayoutGalleryView extends FrameLayout {
         return binding.layoutGallery.getVisibility() == View.VISIBLE;
     }
 
-    public boolean isStickerShow(){
-        return binding.layoutSticker.getVisibility() == View.VISIBLE;
-    }
-
     public void showGallery(boolean show){
         binding.layoutGallery.setVisibility(show?View.VISIBLE: View.GONE);
-        if (show){
-            binding.layoutSticker.setVisibility( View.GONE);
-        }
-
-    }
-
-    public void showSticker(boolean show){
-        binding.layoutSticker.setVisibility(show?View.VISIBLE: View.GONE);
-        if (show){
-            binding.layoutGallery.setVisibility( View.GONE);
-        }
     }
 
     public Listener listener;
+
 
     public interface  Listener{
 

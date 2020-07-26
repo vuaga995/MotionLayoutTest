@@ -23,21 +23,6 @@
                 />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/layout_sticker"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#8BC34A"
-            android:visibility="gone"
-            android:gravity="center"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Sticker green banana"
-                />
-        </LinearLayout>
 
     </RelativeLayout>
 

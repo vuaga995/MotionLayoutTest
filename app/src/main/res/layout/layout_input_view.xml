@@ -21,6 +21,12 @@
             android:layout_height="36dp"
             android:src="@drawable/ic_sticker"
             />
+        <ImageView
+            android:id="@+id/btn_gif"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_gif"
+            />
 
         <EditText
             android:id="@+id/input_view"

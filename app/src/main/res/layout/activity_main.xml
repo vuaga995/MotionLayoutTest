@@ -59,12 +59,35 @@
             android:orientation="vertical"
             android:padding="12dp"/>
 
+        <LinearLayout
+            android:id="@+id/layout_gallery_croller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFF00"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="========= yellow" />
+        </LinearLayout>
+
         <com.example.myapplication.view.LayoutGalleryView
             android:id="@+id/layout_gallery"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical" />
 
+
+        <com.example.myapplication.view.LayoutStickerView
+            android:id="@+id/layout_sticker"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/layout_keybroad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_keybroad"
+            />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

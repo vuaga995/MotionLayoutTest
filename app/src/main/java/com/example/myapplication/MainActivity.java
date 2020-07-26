@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.layoutKeybroad.getLayoutParams().height = 374;
+        binding.layoutKeybroad.getLayoutParams().height = 874;
         bindView();
     }
 
@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         binding.layoutInput.listener = new LayoutInputView.Listener() {
             @Override
             public void onClickSticker() {
-                if (binding.layoutGallery.isStickerShow()) {
+                if (binding.layoutSticker.getVisibility() ==View.VISIBLE) {
                     onShowSticker(false);
                     showlayoutKeyBroad(false);
                 } else {
-
+                    binding.layoutGalleryCroller.setVisibility(View.GONE);
                     onShowSticker(true);
                     showlayoutKeyBroad(true);
                 }
@@ -49,12 +49,25 @@ public class MainActivity extends AppCompatActivity {
                     showlayoutKeyBroad(false);
                     enableTransitionGallery(false);
                 } else {
+                    binding.layoutGalleryCroller.setVisibility(View.VISIBLE);
                     onShowGallery(true);
                     showlayoutKeyBroad(true);
                     enableTransitionGallery(true);
                 }
                 onShowSticker(false);
                 hideKeybroad();
+            }
+
+            @Override
+            public void onClickGif() {
+                binding.layoutGalleryCroller.setVisibility(View.GONE);
+                onShowSticker(false);
+                onShowGallery(false);
+                showlayoutKeyBroad(true);
+                hideKeybroad();
+                binding.layoutGalleryCroller.setVisibility(View.GONE);
+                enableTransitionGallery(false);
+                binding.layoutGalleryCroller.setVisibility(View.GONE);
             }
 
             @Override
@@ -104,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onShowSticker(boolean show) {
-        binding.layoutGallery.showSticker(show);
+        binding.layoutSticker.setVisibility(show?View.VISIBLE:View.GONE);
     }
 
     private void onShowGallery(boolean show) {

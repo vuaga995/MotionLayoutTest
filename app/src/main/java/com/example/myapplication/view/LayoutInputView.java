@@ -53,7 +53,14 @@ public class LayoutInputView extends FrameLayout {
         binding.inputView.setOnFocusChangeListener(new OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                listener.onFocusInput(hasFocus);
+                if (listener!=null) listener.onFocusInput(hasFocus);
+            }
+        });
+
+        binding.btnGif.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener!=null)listener.onClickGif();
             }
         });
     }
@@ -64,6 +71,7 @@ public class LayoutInputView extends FrameLayout {
 
         void onClickSticker();
         void onClickGallery();
+        void onClickGif();
 
         void onFocusInput(boolean focus);
 

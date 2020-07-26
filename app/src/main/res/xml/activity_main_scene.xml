@@ -10,18 +10,34 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/layout_keybroad" />
-
+        <Constraint
+            android:id="@+id/layout_gallery_croller"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_keybroad" >
+            <PropertySet
+                android:alpha="1"
+                app:visibilityMode="ignore"
+                android:visibility="visible"
+                />
+        </Constraint>
         <Constraint
             android:id="@+id/layout_gallery"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/layout_keybroad" />
+            app:layout_constraintTop_toBottomOf="@id/layout_gallery_croller" />
         <Constraint android:id="@id/layout_keybroad">
             <PropertySet
                 app:applyMotionScene="false"
                 app:visibilityMode="ignore"
-
+                />
+        </Constraint>
+        <Constraint android:id="@id/layout_sticker">
+            <PropertySet
+                app:applyMotionScene="false"
+                app:visibilityMode="ignore"
                 />
         </Constraint>
 
@@ -35,14 +51,32 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
+        <Constraint
+            android:id="@+id/layout_gallery_croller"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+            <PropertySet
+                android:alpha="0"
+                android:visibility="invisible"
+                app:visibilityMode="ignore"
+                />
+        </Constraint>
         <Constraint
             android:id="@+id/layout_gallery"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_gallery_header" />
+
         <Constraint android:id="@id/layout_keybroad">
+            <PropertySet
+                app:applyMotionScene="false"
+                app:visibilityMode="ignore" />
+        </Constraint>
+        <Constraint android:id="@id/layout_sticker">
             <PropertySet
                 app:applyMotionScene="false"
                 app:visibilityMode="ignore" />
